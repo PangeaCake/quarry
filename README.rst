@@ -3,7 +3,7 @@ Quarry for python3
 
 `original repo`_
 
-_original repo: https://github.com/barneygale/quarry/
+.. _original repo: https://github.com/barneygale/quarry/
 
 This repo has modifications so that quarry can run on python 3 :D
 
