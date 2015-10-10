@@ -25,9 +25,9 @@ Twisted on python 3 + windows was broken at least for me. To fix this, we need t
 First you need to navigate to your Python/lib/site-packages/twisted folder.
 Open twisted/python/lockfile.py and edit line 52 to be ``_open = open``.
 
-Then, download the two files ``_win32stdio.py`` and ``_pollingfile.py`` from this repo's twisted/ folder, and put them in your local twisted/internet/ folder.
+Then, download the two files ``_win32stdio.py`` and ``_pollingfile.py`` from this repo's ``twisted/`` folder, and put them in your local ``twisted/internet/`` folder.
 
-Lastly, you may need to install win32api/pywin32. I did this by downloading http://www.lfd.uci.edu/~gohlke/pythonlibs/#pywin32, then running the following as that page suggests:
+Lastly, you may need to install win32api/pywin32. I did this by downloading from http://www.lfd.uci.edu/~gohlke/pythonlibs/#pywin32, then running the following as that page suggests:
 
 .. code-block:: console
 
