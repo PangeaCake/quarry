@@ -16,7 +16,7 @@ Use ``pip`` to install quarry:
 
     $ pip install quarry
     
-Here's where the python 3 part comes out. However, do note YMMV.
+Here's where the python 3 part comes in. However, do note YMMV.
 
 Twisted on python 3 + windows was broken at least for me. To fix this, we need to do some extra stuff.
 
