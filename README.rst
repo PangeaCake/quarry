@@ -1,8 +1,11 @@
-Quarry: a Minecraft protocol library
-====================================
+Quarry for python3
+==================
 
-Quarry is a Python library that implements the `Minecraft protocol`_. It allows
-you to write special purpose clients, servers and proxies.
+`original repo`_
+
+_original repo: https://github.com/barneygale/quarry/
+
+This repo has modifications so that quarry can run on python 3 :D
 
 Installation
 ------------
@@ -12,19 +15,23 @@ Use ``pip`` to install quarry:
 .. code-block:: console
 
     $ pip install quarry
+    
+Here's where the python 3 part comes out. However, do note YMMV.
 
-Features
---------
+Twisted on python 3 + windows was broken at least for me. To fix this, we need to do some extra stuff.
 
-- Supports Minecraft 1.7 and 1.8
-- Supports Python 2.7 and 3.2+
-- Built upon ``twisted`` and ``cryptography``
-- Exposes base classes and hooks for implementing your own client, server or
-  proxy.
-- Implements the design of the protocol - packet headers, modes, compression,
-  encryption, login/session, etc.
-- Implements all packets in "init", "status" and "login" modes
-- Does *not* implement most packets in "play" mode - it is left up to you to
-  hook and implement the packets you're interested in.
+**HOWEVER: DO NOTE THAT THIS IS NOT GUARANTEED TO WORK AND EVEN AFTER THESE CHANGES MAY HAVE BUGS FOR PYTHON 3**
 
-.. _Minecraft protocol: http://wiki.vg/Protocol
+First you need to navigate to your Python/lib/site-packages/twisted folder.
+Open twisted/python/lockfile.py and edit line 52 to be `_open = open`.
+
+Then, download the two files `_win32stdio.py` and `_pollingfile.py` from this repo's twisted/ folder, and put them in your local twisted/internet/ folder.
+
+Lastly, you may need to install win32api/pywin32. I did this by downloading http://www.lfd.uci.edu/~gohlke/pythonlibs/#pywin32, then running the following as that page suggests:
+
+.. code-block:: console
+
+    $ pip install filename.whl
+    $ python C:\Python34\Scripts\pywin32_postinstall.py -install
+    
+Again, YMMV. Good luck.
